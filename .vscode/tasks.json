@@ -1,0 +1,42 @@
+{
+  "version": "2.0.0",
+  "tasks": [ // list of tasks
+    {
+      "type": "cppbuild",
+      "label": "C/C++: g++.exe build all",  // User defined name for identification
+      "command": "C:\\mingw64\\bin\\g++.exe", // This would run on clicking button
+      "args": [ // The commands that will be passed to the g++.exe in the command line
+        "-fdiagnostics-color=always",
+        "-g",
+        "${fileDirname}\\*.cpp",
+        "-I${fileDirname}",
+        "-o",
+        "${fileDirname}\\${fileBasenameNoExtension}.exe"
+      ],
+      "options": {
+        "cwd": "${fileDirname}" // specifies what is your current working directory
+      },
+      "problemMatcher": [
+        "$gcc"
+      ],
+      "group": {
+        "kind": "build",
+        "isDefault": true // This task runs when click on play button
+      },
+      "detail": "compiler: C:\\mingw64\\bin\\g++.exe", // optional description about task
+    },
+    {
+      "label": "Run Executable",
+      "type": "shell",
+      "command": "./${fileBasenameNoExtension}.exe",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    }
+  ]
+}
+
+
+
+
